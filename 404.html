@@ -35,15 +35,35 @@
       display: inline;
     }
   </style>
+
+  <script>
+    window.onload = function() {
+      var currentUrl = window.location.href;
+      if (currentUrl.includes("studio.ribbonfarm.com")) {
+        var newUrl = currentUrl.replace("studio.ribbonfarm.com", "contraptions.venkateshrao.com");
+        setTimeout(function() {
+          window.location.href = newUrl;
+        }, 3000); // Redirect after 3 seconds
+
+        // Show clickable link for manual redirection
+        var linkElement = document.getElementById('manualRedirectLink');
+        linkElement.innerHTML = '<p>If you are not redirected automatically, click <a href="' + newUrl + '">here</a> to go to the new page.</p>';
+      }
+    }
+  </script>
+
 </head>
 <body>
     <div id="pagebox">
-    <h1>Whoops!</h1>
-    <hline/>
-          <h2>Ribbonfarm Studio has moved</h2>
-          <p>If you're looking for a Ribbonfarm Studio newsletter link, those links broke in the migration to the new name and domain.</p>
-        <p>You can find the newsletter at <a href= "https://contraptions.venkateshrao.com">https://contraptions.venkateshrao.com</a></p>
-        <p>All the old posts still exist. Just replace the <strong>studio.ribbonfarm.com</strong> with <strong>contraptions.venkateshrao.com</strong> in the URL. Sorry for the inconvenience. There doesn't appear to be a way to migrate the old links at Substack.</p>
-</index>
+      <h1>Whoops!</h1>
+      <hline/>
+      <h2>Ribbonfarm Studio has moved</h2>
+      <p>If you're looking for a Ribbonfarm Studio newsletter link, those links broke in the migration to the new name and domain.</p>
+      <p>You can find the newsletter at <a href= "https://contraptions.venkateshrao.com">https://contraptions.venkateshrao.com</a></p>
+      <p>All the old posts still exist. Just replace the <strong>studio.ribbonfarm.com</strong> with <strong>contraptions.venkateshrao.com</strong> in the URL. Sorry for the inconvenience.</p>
+
+      <!-- Placeholder for manual redirect link -->
+      <div id="manualRedirectLink"></div>
+    </div>
 </body>
 </html>
